@@ -24,7 +24,7 @@ apiClient.interceptors.response.use(
   (error: AxiosError<ApiError>) => {
     const errResponse = error.response;
     if (errResponse?.status === 401) {
-      signOut({ redirect: true, callbackUrl: '/login' });
+      signOut({ redirect: true, callbackUrl: '/auth/login' });
     }
     return Promise.reject(errResponse?.data || error);
   }
