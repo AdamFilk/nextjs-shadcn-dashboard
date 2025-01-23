@@ -1,12 +1,13 @@
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { Command } from 'lucide-react';
+import Link from 'next/link';
 
 const NavHeader = () => {
   return (
     <SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton size="lg" asChild>
-          <a href="#">
+          <Link href="/">
             <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
               <Command className="size-4" />
             </div>
@@ -14,7 +15,7 @@ const NavHeader = () => {
               <span className="truncate font-semibold">Dannie&apos;s</span>
               <span className="truncate text-xs">Paradis</span>
             </div>
-          </a>
+          </Link>
         </SidebarMenuButton>
       </SidebarMenuItem>
     </SidebarMenu>
