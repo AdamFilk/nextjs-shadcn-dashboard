@@ -1,3 +1,4 @@
+import { UIModeToggle } from '@/components/shared/buttons/mode-toggle';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,7 +16,7 @@ type ContentHeaderProps = {
 };
 export function ContentHeader({ breadcrumb }: ContentHeaderProps) {
   return (
-    <header className="flex h-16 shrink-0 items-center gap-2">
+    <header className="flex h-16 shrink-0 gap-2 justify-between items-center">
       <div className="flex items-center gap-2 px-4">
         <SidebarTrigger className="-ml-1" />
         <Separator orientation="vertical" className="mr-2 h-4" />
@@ -38,6 +39,7 @@ export function ContentHeader({ breadcrumb }: ContentHeaderProps) {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
+      <UIModeToggle />
     </header>
   );
 }

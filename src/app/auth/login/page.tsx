@@ -1,5 +1,5 @@
 import { LoginForm } from '@/components/pages/login/login-form';
-import { ModeToggle } from '@/components/shared/buttons/mode-toggle';
+import { UIModeToggle } from '@/components/shared/buttons/mode-toggle';
 import { GalleryVerticalEnd } from 'lucide-react';
 
 export default function LoginPage() {
@@ -14,7 +14,7 @@ export default function LoginPage() {
             </div>
             Test Inc.
           </a>
-          <ModeToggle />
+          <UIModeToggle />
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">

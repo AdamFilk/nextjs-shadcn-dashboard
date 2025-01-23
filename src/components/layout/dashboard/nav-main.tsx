@@ -45,7 +45,6 @@ export function NavMain() {
       if (pathname.includes(item.url)) {
         if (item.items && item.items.length > 0) {
           item.items.forEach((subItem) => {
-            console.log(subItem.url, pathname);
             if (pathname.includes(subItem.url)) {
               subItem.isActive = true;
             }

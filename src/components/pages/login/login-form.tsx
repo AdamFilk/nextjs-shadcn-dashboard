@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useRouter } from 'next/navigation';
 import z from 'zod';
@@ -17,7 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Loader2 } from 'lucide-react';
+import UIButton from '@/components/shared/buttons';
 
 const loginFormSchema = z.object({
   email: z.string().email(),
@@ -91,10 +90,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
               </FormItem>
             )}
           />
-          <Button type="submit">
-            {loading ? <Loader2 className="animate-spin" /> : null}
-            Login
-          </Button>
+          <UIButton type="submit" loading={loading} disabled={loading} text="Loading" />
         </div>
       </form>
     </Form>
