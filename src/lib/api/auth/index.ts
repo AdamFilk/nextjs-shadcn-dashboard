@@ -1,7 +1,7 @@
 import { CredentialLoginPayload, TLoginRepoonse } from '@/types/api/auth';
 import apiClient from '../client';
 import endPoints from '../endpoints';
-import { ApiResponse } from '@/types/common';
+import { ApiResponse } from '@/types/api/common';
 
 export const authApi = {
   login: async (payload: CredentialLoginPayload) => {

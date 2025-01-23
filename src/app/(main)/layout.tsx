@@ -1,3 +1,5 @@
+import { AppSidebar } from '@/components/layout/dashboard/app-sidebar';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import { auth } from '@/lib/helpers/auth';
 import { redirect } from 'next/navigation';
 
@@ -7,7 +9,12 @@ type MainLayoutProps = {
 export default async function MainLayout({ children }: MainLayoutProps) {
   const session = await auth();
   if (!session) {
-    redirect('/auth/login');
+    return redirect('/auth/login');
   }
-  return children;
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>{children}</SidebarInset>
+    </SidebarProvider>
+  );
 }

@@ -1,4 +1,4 @@
-import { ApiError } from '@/types/common';
+import { ApiError } from '@/types/api/common';
 import type { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from 'next';
 import NextAuth, { AuthOptions, getServerSession, User } from 'next-auth';
 import { authApi } from '../api/auth';
