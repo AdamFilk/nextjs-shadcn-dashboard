@@ -17,6 +17,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import UIButton from '@/components/shared/buttons';
+import { GoogleIcon } from '@/components/shared/icons/social-icons';
 
 const loginFormSchema = z.object({
   email: z.string().email(),
@@ -48,6 +49,16 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
       router.replace('/'); // Redirect to a protected page after successful login
     }
     setLoading(false);
+  };
+
+  const handleGoogleLogin = async () => {
+    const result = await signIn('google', { redirect: false });
+    console.log(result);
+    if (result?.error) {
+      setError(result.error);
+    } else if (result) {
+      router.replace('/'); // Redirect to a protected page after successful login
+    }
   };
 
   return (
@@ -92,6 +103,13 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
             )}
           />
           <UIButton type="submit" loading={loading} disabled={loading} text="Login" />
+          <UIButton
+            loading={loading}
+            disabled={loading}
+            text="Login with Google"
+            icon={<GoogleIcon />}
+            onClick={handleGoogleLogin}
+          />
         </div>
       </form>
     </Form>

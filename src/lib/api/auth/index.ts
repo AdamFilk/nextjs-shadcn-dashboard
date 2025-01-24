@@ -8,4 +8,10 @@ export const authApi = {
     const response = await apiClient.post<ApiResponse<TLoginRepoonse>>(endPoints.login, payload);
     return response.data;
   },
+  googleSignIn: async (token: string) => {
+    const res = await apiClient.get(endPoints.googleSignIn, {
+      params: { token },
+    });
+    return res.data;
+  },
 };
