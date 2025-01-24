@@ -30,6 +30,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
       email: '',
       password: '',
     },
+    mode: 'onChange',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -90,7 +91,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
               </FormItem>
             )}
           />
-          <UIButton type="submit" loading={loading} disabled={loading} text="Loading" />
+          <UIButton type="submit" loading={loading} disabled={loading} text="Login" />
         </div>
       </form>
     </Form>
